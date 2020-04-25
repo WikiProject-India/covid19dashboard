@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>COVID19 INDIA DASHBOARD</title>
+	<meta name="keywords" content="COVID-19, COVID-19 in India, Corona virus in India, Wikidata">
+	<meta property="og:description" content="powered by Wikidata">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" sizes="32x32" href="./Images/favicon/WikiProject_India_Wikidata_logo-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./Images/favicon/WikiProject_India_Wikidata_logo-192x192.png">
+	<link rel="manifest" href="./Images/favicon/site.webmanifest">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+	<script src="https://www.promisejs.org/polyfills/promise-7.0.4.min.js"></script>
+	<style>
+		html,
+		body {
+			height: 100%;
+			margin: 0;
+		}
+
+		.lowmargin {
+			margin-bottom: 1px !important;
+		}
+
+		section {
+			padding-left: 0.8rem !important;
+			padding-right: 0.8rem !important;
+		}
+
+		.info {
+			padding: 6px 8px;
+			font: 14px/16px Arial, Helvetica, sans-serif;
+			background: white;
+			background: rgba(255, 255, 255, 0.8);
+			box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+		}
+
+		.info h4 {
+			font: 14px/16px Arial, Helvetica, sans-serif;
+			margin: 0 0 5px;
+			color: #777;
+		}
+
+		.legend {
+			min-width: 120px;
+			line-height: 20px;
+			color: #555;
+		}
+
+		.legend i {
+			width: 16px;
+			height: 16px;
+			float: right;
+			margin-right: 8px;
+			opacity: 0.7;
+		}
+
+
+		#tab-container section {
+			display: none;
+		}
+
+		.section.top {
+			padding-bottom: 1rem !important;
+		}
+
+		.section.extra {
+			padding-top: 1rem !important;
+		}
+
+		#tab-container section.is-active {
+			padding-top: 0.1rem;
+			padding-bottom: 0.1rem;
+			display: block;
+		}
+
+		.tooltip {
+			display: block;
+
+		}
+
+		/* Media queries */
+		@media only screen
+		  and (min-device-width: 320px)
+		  and (max-device-width: 480px)
+		  and (-webkit-min-device-pixel-ratio: 2) {
+				.svg-container {
+					width: 115%;
+					padding-bottom: 120%;
+				}
+		}
+
+
+		@media only screen and (max-width: 768px) {
+			/* For mobile phones: */
+			[class="mapcontainer"] {
+				padding: 0 !important;
+			}
+		}
+	</style>
+
+
+</head>
+
+<body>
+	<section class="section top">
+		<div class="container">
+			<div class="columns is-centered">
+				<div class="column is-half has-text-centered">
+					<h1 class="title">COVID19 INDIA DASHBOARD</h1>
+					<h4>Powered by Wikidata</h4>
+				</div>
+			</div>
+
+			<div class="columns is-centered">
+				<div class="column is-half">
+					<div class="tabs is-centered" id="tabs">
+						<ul>
+							<li class="is-active" data-tab="1"><a>India</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+	</section>
+
+	<div id="tab-container">
+		<section class="section is-active" data-content="1">
+
+			<!-- section starts here -->
+
+			<div class="columns is-centered">
+				<div class="column is-half-desktop is-full-mobile has-text-centered">
+					<p class="title is-4 is-spaced">District Wise details of COVID19 cases in India</p>
+				</div>
+			</div>
+			<div class="columns is-centered"
+				<p class="subtitle is-6">data powered by Wikidata</p>
+			</div>
+			<div class="columns is-centered"
+				<div class="level is-mobile">
+					<iframe style="width: 80vw; height: 40vh; border: none;" src="https://query.wikidata.org/embed.html#%23created%20by%20Mahir256%0A%23defaultView%3AMap%7B%22hide%22%3A%5B%22%3Fshape%22%2C%20%22%3Frgb%22%5D%7D%0ASELECT%20%3Fitem%20%3FitemLabel%20%3Fdist%20%3FdistLabel%20%3Fcases%20%3Fshape%20%3Frgb%20%3Ftime%20WHERE%20%7B%0A%20%20wd%3AQ84055514%20wdt%3AP527%2Fwdt%3AP527%20%3Fitem.%0A%20%20%3Fitem%20wdt%3AP276%20%3Fdist%20%3B%20p%3AP1603%20%3Fcasestmt.%20%0A%20%20%3Fdist%20wdt%3AP3896%20%3Fshape.%0A%20%20%3Fcasestmt%20ps%3AP1603%20%3Fcases%20%3B%20pq%3AP585%20%3Ftime%20.%0A%20%20%7B%20SELECT%20(MAX(%3Fcases_)%20as%20%3Fmc)%20%7B%0A%20%20%20%20%20%20wd%3AQ84055514%20wdt%3AP527%2Fwdt%3AP527%2Fwdt%3AP1603%20%3Fcases_%0A%20%20%7D%20%7D%0A%20%20FILTER%20NOT%20EXISTS%20%7B%20%3Fitem%20p%3AP1603%2Fpq%3AP585%20%3Ftime_.%20FILTER(%3Ftime%20%3C%20%3Ftime_)%20%7D%0A%20%20BIND(IF(%3Fcases%20%3E%20(9%20*%20%3Fmc)%2F10%2C%22290205%22%2C%20%0A%20%20%20%20%20%20%20IF(%3Fcases%20%3E%20(4%20*%20%3Fmc)%2F5%2C%2266080f%22%2C%0A%20%20%20%20%20%20%20IF(%3Fcases%20%3E%20(7%20*%20%3Fmc)%2F10%2C%22a60c17%22%2C%20%0A%20%20%20%20%20%20%20IF(%3Fcases%20%3E%20(3%20*%3Fmc)%2F5%2C%22db0f1e%22%2C%0A%20%20%20%20%20%20%20IF(%3Fcases%20%3E%20%3Fmc%2F2%2C%22f02937%22%2C%20%0A%20%20%20%20%20%20%20IF(%3Fcases%20%3E%20(2%20*%20%3Fmc)%2F5%2C%22ed4e59%22%2C%0A%20%20%20%20%20%20%20IF(%3Fcases%20%3E%20(3%20*%20%3Fmc)%2F10%2C%22ed727a%22%2C%20%0A%20%20%20%20%20%20%20IF(%3Fcases%20%3E%20%3Fmc%2F5%2C%22f79ca2%22%2C%20%20%0A%20%20%20%20%20%20%20%22f5cbce%22))))))))%20as%20%3Frgb)%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+				</div>
+			</div>
+		</div>
+		</section>
+	</div>
+	<section class="section extra">
+		<div class="columns is-centered">
+			<div class="column is-half">
+				<div class="content">
+					<h5 class="title is-5"> Disclaimer </h5>
+  					<ul>
+						<li> The maps that uses here come from <a href="https://www.openstreetmap.org/">OpenStreetMap</a>, and therefore whatever policies in use there with regard to international borders will necessarily be mirroredo.</li>	
+						<li> The project aims to visualize the data and contribute the data to <strong>Wikidata</strong>. The data is contributed to the WikiProject to collect Wikidata resources related to COVID-19 and for more details visit <a href="https://www.wikidata.org/wiki/Wikidata:WikiProject_India/COVID-19_task_force">COVID-19 Task force India</a>.</li>
+		  			</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="content has-text-centered">
+			<p>
+			<strong>Powered by </strong> from <a href="https://www.wikidata.org/">Wikidata</a> data
+			</p>
+		</div>
+	</footer>
+
+</body>
+</html>
