@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>COVID19 INDIA DASHBOARD</title>
+	<meta name="keywords" content="COVID-19, COVID-19 in India, Corona virus in India, Wikidata">
+	<meta property="og:description" content="powered by Wikidata">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" sizes="32x32" href="./favicon/WikiProject_India_Wikidata_logo-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./favicon/WikiProject_India_Wikidata_logo-192x192.png">
+	<link rel="manifest" href="./favicon/site.webmanifest">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+	<section class="section top">
+		<div class="container">
+			<div class="columns is-centered">
+				<div class="column is-half has-text-centered">
+					<h1 class="title is-2">COVID19 INDIA DASHBOARD</h1>
+					<h2 class="title is-6">(Initiative by WikiProject India)</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+  	<section class="section top">
+		<div class="container">
+			<div class="columns is-centered">
+   				 <div class="tabs is-centered">
+    					<ul>
+      						<li id="all-tab" class="is-active">
+      					 		<a onclick="switchToAll()">
+       					 			<span class="icon is-small"><i class="fa fa-dashboard"></i></span>
+        								<span>All</span>
+     					 		</a>
+      						</li>
+      						<li id="confirmed-tab" class="">
+       							 <a onclick="switchToConfirmed()">
+        								<span class="icon is-small"><i class="fa fa-hospital-o"></i></span>
+        								<span>Confirmed</span>
+      							</a>
+     						 </li>
+     						 <li id="recovery-tab" class="">
+        							<a onclick="switchToRecovery()">
+        								<span class="icon is-small"><i class="fa fa-smile-o"></i></span>
+       								<span>Recovery</span>
+      							</a>
+      						</li>
+      						<li id="death-tab" class="">
+        							<a onclick="switchToDeath()">
+        								<span class="icon is-small"><i class="fa fa-ambulance"></i></span>
+      	 							<span>Death</span>
+      							</a>
+      						</li>
+      						<li id="test-tab">
+        							<a onclick="switchToTest()">
+        								<span class="icon is-small"><i class="fa fa-thermometer-2"></i></span>
+        								<span>Test</span>
+      							</a>
+      						</li>
+    					</ul>
+    					<!--/tabs is-centered-->
+  				</div>
+ 			</div>
+		</div>
+	</section>
+	<div class="container">
+    		<div id="all-tab-content" class="">
+      			<div class="columns is-centered"
+					<div class="level is-mobile">
+						<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Ftime%20%3Fnumber%20%3Ffigure%20%7B%0A%20%20BIND%28wd%3AQ84055514%20as%20%3Fpandemic_item%29%0A%20%20%7B%20%3Fpandemic_item%20p%3AP1603%20%5Bps%3AP1603%20%3Fnumber%20%3B%20pq%3AP585%20%3Ftime%5D.%20BIND%28%22cases%22%20as%20%3Ffigure%29%20%7D%0A%20%20UNION%0A%20%20%7B%20%3Fpandemic_item%20p%3AP1120%20%5Bps%3AP1120%20%3Fnumber%20%3B%20pq%3AP585%20%3Ftime%5D.%20BIND%28%22deaths%22%20as%20%3Ffigure%29%20%7D%0A%20%20UNION%0A%20%20%7B%20%3Fpandemic_item%20p%3AP8010%20%5Bps%3AP8010%20%3Fnumber%20%3B%20pq%3AP585%20%3Ftime%5D.%20BIND%28%22recoveries%22%20as%20%3Ffigure%29%20%7D%0A%20%20UNION%0A%20%20%7B%20%3Fpandemic_item%20p%3AP8011%20%5Bps%3AP8011%20%3Fnumber%20%3B%20pq%3AP585%20%3Ftime%5D.%20BIND%28%22tests%22%20as%20%3Ffigure%29%20%7D%0A%7D" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
+					</div>
+				</div>
+   			</div>
+   		<div class="is-hidden" id="confirmed-tab-content">
+      			<h5 class="title is-5" style="text-align:center;"> Confirmed cases in India </h5>
+				<div class="columns is-centered"
+					<div class="level is-mobile">
+						<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Fdate%20%3Fcases%20WHERE%20%7B%0A%20%20wd%3AQ84055514%20wdt%3AP1603%20%3Fcases%3B%0A%20%20%20%20p%3AP1603%20%3Fst.%0A%20%20%3Fst%20pq%3AP585%20%3Fdate%3B%0A%20%20%20%20ps%3AP1603%20%3Fcases.%0A%7D%0AORDER%20BY%20%28%3Fdate%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
+					</div>
+				</div>
+    			</div>
+    		<div class="is-hidden" id="recovery-tab-content">
+      			<h5 class="title is-5" style="text-align:center;"> Recovered cases in India </h5>
+				<div class="columns is-centered"
+					<div class="level is-mobile">
+						<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Fdate%20%3Fdeaths%20WHERE%20%7B%0A%20%20wd%3AQ84055514%20wdt%3AP8010%20%3Fdeaths%3B%0A%20%20%20%20p%3AP8010%20%3Fst.%0A%20%20%3Fst%20pq%3AP585%20%3Fdate%3B%0A%20%20%20%20ps%3AP8010%20%3Fdeaths.%0A%7D%0AORDER%20BY%20%28%3Fdate%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
+					</div>
+				</div>
+    			</div>
+    		<div class="is-hidden" id="death-tab-content">
+      			<h5 class="title is-5" style="text-align:center;"> Death cases in India </h5>
+				<div class="columns is-centered"
+					<div class="level is-mobile">
+						<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Fdate%20%3Fdeaths%20WHERE%20%7B%0A%20%20wd%3AQ84055514%20wdt%3AP1120%20%3Fdeaths%3B%0A%20%20%20%20p%3AP1120%20%3Fst.%0A%20%20%3Fst%20pq%3AP585%20%3Fdate%3B%0A%20%20%20%20ps%3AP1120%20%3Fdeaths.%0A%7D%0AORDER%20BY%20%28%3Fdate%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
+					</div>
+				</div>
+    			</div>
+    		<div class="is-hidden" id="test-tab-content">
+      			<<h5 class="title is-5" style="text-align:center;"> Number of clinical tests done in India </h5>
+				<div class="columns is-centered"
+					<div class="level is-mobile">
+						<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Fdate%20%3Ftests%20WHERE%20%7B%0A%20%20wd%3AQ84055514%20wdt%3AP8011%20%3Ftests%3B%0A%20%20%20%20p%3AP8011%20%3Fst.%0A%20%20%3Fst%20pq%3AP585%20%3Fdate%3B%0A%20%20%20%20ps%3AP8011%20%3Ftests.%0A%7D%0AORDER%20BY%20%28%3Fdate%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
+					</div>
+				</div>
+    			</div>
+  	</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    function switchToAll() {
+      removeActive();
+      hideAll();
+      $("#all-tab").addClass("is-active");
+      $("#all-tab-content").removeClass("is-hidden");
+    }
+
+    function switchToConfirmed() {
+      removeActive();
+      hideAll();
+      $("#confirmed-tab").addClass("is-active");
+      $("#confirmed-tab-content").removeClass("is-hidden");
+    }
+
+    function switchToRecovery() {
+      removeActive();
+      hideAll();
+      $("#recovery-tab").addClass("is-active");
+      $("#recovery-tab-content").removeClass("is-hidden");
+    }
+
+    function switchToDeath() {
+      removeActive();
+      hideAll();
+      $("#death-tab").addClass("is-active");
+      $("#death-tab-content").removeClass("is-hidden");
+    }
+
+    function switchToTest() {
+      removeActive();
+      hideAll();
+      $("#test-tab").addClass("is-active");
+      $("#test-tab-content").removeClass("is-hidden");
+    }
+
+    function removeActive() {
+      $("li").each(function() {
+        $(this).removeClass("is-active");
+      });
+    }
+
+    function hideAll(){
+      $("#all-tab-content").addClass("is-hidden");
+      $("#confirmed-tab-content").addClass("is-hidden");
+      $("#recovery-tab-content").addClass("is-hidden");
+      $("#death-tab-content").addClass("is-hidden");
+      $("#test-tab-content").addClass("is-hidden");
+    }
+	
+  </script>
+  	<section class="section extra">
+		<div class="columns is-centered">
+			<div class="column is-half">
+				<div class="content">
+					<h5 class="title is-5"> Disclaimer </h5>
+  					<ul>
+						<li> The maps that uses here come from <a href="https://www.openstreetmap.org/">OpenStreetMap</a>, and therefore whatever policies in use there with regard to international borders will necessarily be mirroredo.</li>	
+						<li> The project aims to visualize the data and contribute the data to <strong>Wikidata</strong>. The data is contributed to the WikiProject to collect Wikidata resources related to COVID-19 and for more details visit <a href="https://www.wikidata.org/wiki/Wikidata:WikiProject_India/COVID-19_task_force">COVID-19 Task force India</a>.</li>
+		  			</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+  <footer class="footer">
+	<div class="content has-text-centered">
+		<p><a href="https://www.wikidata.org/"><img src="./Images/Wikidata_Stamp_Rec_Light.png"></a></p>
+	</div>
+   </footer>
+</body>
+</html>
