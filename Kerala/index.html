@@ -13,6 +13,21 @@
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+.buttonA {
+  border-radius: 0px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  a color: white;
+}
+
+.buttonA:hover span {
+  padding-right: 10px;
+}
+
+
 .dropbtn {
   background-color: #4CAF50;
   color: white;
@@ -31,13 +46,14 @@
   position: absolute;
   background-color: #f1f1f1;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  font-size: 14px;
+  box-shadow: 0px 8px 14px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
 .dropdown-content a {
   color: black;
-  padding: 12px 16px;
+  padding: 11px 14px;
   text-decoration: none;
   display: block;
 }
@@ -61,6 +77,8 @@
 			</div>
 		</div>
 	</section>
+	<button class="buttonA"><a href="./../India" style="color:white; text-decoration: none;"> India Dashboard </a></button>
+</br>
 <div class="dropdown">
   <button class="dropbtn">States / UT</button>
   <div class="dropdown-content">
@@ -110,7 +128,8 @@
 	</section>
 	<div class="container">
     		<div id="all-tab-content" class="">
-      			<div class="columns is-centered"
+			<h5 class="title is-5" style="text-align:center;"> Confirmed vs Recovered vs Death cases in Kerala</h5>
+      				<div class="columns is-centered"
 					<div class="level is-mobile">
 						<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Ftime%20%3Fnumber%20%3Ffigure%20%7B%0A%20%20BIND%28wd%3AQ87429464%20as%20%3Fpandemic_item%29%0A%20%20%7B%20%3Fpandemic_item%20p%3AP1603%20%5Bps%3AP1603%20%3Fnumber%20%3B%20pq%3AP585%20%3Ftime%5D.%20BIND%28%22cases%22%20as%20%3Ffigure%29%20%7D%0A%20%20UNION%0A%20%20%7B%20%3Fpandemic_item%20p%3AP1120%20%5Bps%3AP1120%20%3Fnumber%20%3B%20pq%3AP585%20%3Ftime%5D.%20BIND%28%22deaths%22%20as%20%3Ffigure%29%20%7D%0A%20%20UNION%0A%20%20%7B%20%3Fpandemic_item%20p%3AP8010%20%5Bps%3AP8010%20%3Fnumber%20%3B%20pq%3AP585%20%3Ftime%5D.%20BIND%28%22recoveries%22%20as%20%3Ffigure%29%20%7D%0A%7D" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
 					</div>
