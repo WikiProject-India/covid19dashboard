@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: wikiproject-india.github.io
+Token: b2f823323ba4fa8f2082ff1b95a8e598789a49ce8b80020f6f364a9cdccf2756
