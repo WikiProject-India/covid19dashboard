@@ -157,42 +157,42 @@
 	</section>
 	<div class="container">
     		<div id="all-tab-content" class="">
-			<h5 class="title is-5" style="text-align:center;"> Confirmed vs Recovered vs Death cases in Kerala</h5>
+			<h5 class="title is-5" style="text-align:center;"> Confirmed vs Recovered vs Death cases in Goa </h5>
       				<div class="columns is-centered"
 					<div class="level is-mobile">
-						<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Ftime%20%3Fnumber%20%3Ffigure%20%7B%0A%20%20BIND%28wd%3AQ87429464%20as%20%3Fpandemic_item%29%0A%20%20%7B%20%3Fpandemic_item%20p%3AP1603%20%5Bps%3AP1603%20%3Fnumber%20%3B%20pq%3AP585%20%3Ftime%5D.%20BIND%28%22cases%22%20as%20%3Ffigure%29%20%7D%0A%20%20UNION%0A%20%20%7B%20%3Fpandemic_item%20p%3AP1120%20%5Bps%3AP1120%20%3Fnumber%20%3B%20pq%3AP585%20%3Ftime%5D.%20BIND%28%22deaths%22%20as%20%3Ffigure%29%20%7D%0A%20%20UNION%0A%20%20%7B%20%3Fpandemic_item%20p%3AP8010%20%5Bps%3AP8010%20%3Fnumber%20%3B%20pq%3AP585%20%3Ftime%5D.%20BIND%28%22recoveries%22%20as%20%3Ffigure%29%20%7D%0A%7D" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
+						<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Ftime%20%3Fnumber%20%3Ffigure%20%7B%0A%20%20BIND%28wd%3AQ88672484%20as%20%3Fpandemic_item%29%0A%20%20%7B%20%3Fpandemic_item%20p%3AP1603%20%5Bps%3AP1603%20%3Fnumber%20%3B%20pq%3AP585%20%3Ftime%5D.%20BIND%28%22cases%22%20as%20%3Ffigure%29%20%7D%0A%20%20UNION%0A%20%20%7B%20%3Fpandemic_item%20p%3AP1120%20%5Bps%3AP1120%20%3Fnumber%20%3B%20pq%3AP585%20%3Ftime%5D.%20BIND%28%22deaths%22%20as%20%3Ffigure%29%20%7D%0A%20%20UNION%0A%20%20%7B%20%3Fpandemic_item%20p%3AP8010%20%5Bps%3AP8010%20%3Fnumber%20%3B%20pq%3AP585%20%3Ftime%5D.%20BIND%28%22recoveries%22%20as%20%3Ffigure%29%20%7D%0A%7D" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
 					</div>
 				</div>
    			</div>
    		<div class="is-hidden" id="confirmed-tab-content">
-      			<h5 class="title is-5" style="text-align:center;"> Confirmed cases in Kerala</h5>
+      			<h5 class="title is-5" style="text-align:center;"> Confirmed cases in Goa </h5>
 				<div class="columns is-centered"
 					<div class="level is-mobile">
-						<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Fdate%20%3Fcases%20WHERE%20%7B%0A%20%20wd%3AQ87429464%20wdt%3AP1603%20%3Fcases%3B%0A%20%20%20%20p%3AP1603%20%3Fst.%0A%20%20%3Fst%20pq%3AP585%20%3Fdate%3B%0A%20%20%20%20ps%3AP1603%20%3Fcases.%0A%7D%0AORDER%20BY%20%28%3Fdate%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
+						<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Fdate%20%3Fcases%20WHERE%20%7B%0A%20%20wd%3AQ88672484%20wdt%3AP1603%20%3Fcases%3B%0A%20%20%20%20p%3AP1603%20%3Fst.%0A%20%20%3Fst%20pq%3AP585%20%3Fdate%3B%0A%20%20%20%20ps%3AP1603%20%3Fcases.%0A%7D%0AORDER%20BY%20%28%3Fdate%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
 					</div>
 				</div>
     			</div>
     		<div class="is-hidden" id="recovery-tab-content">
-      			<h5 class="title is-5" style="text-align:center;"> Recovered cases in Kerala</h5>
+      			<h5 class="title is-5" style="text-align:center;"> Recovered cases in Goa </h5>
 				<div class="columns is-centered"
 					<div class="level is-mobile">
-						<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Fdate%20%3Frecoveries%20WHERE%20%7B%0A%20%20wd%3AQ87429464%20wdt%3AP8010%20%3Frecoveries%3B%0A%20%20%20%20p%3AP8010%20%3Fst.%0A%20%20%3Fst%20pq%3AP585%20%3Fdate%3B%0A%20%20%20%20ps%3AP8010%20%3Frecoveries.%0A%7D%0AORDER%20BY%20%28%3Fdate%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
+						<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Fdate%20%3Frecoveries%20WHERE%20%7B%0A%20%20wd%3AQ88672484%20wdt%3AP8010%20%3Frecoveries%3B%0A%20%20%20%20p%3AP8010%20%3Fst.%0A%20%20%3Fst%20pq%3AP585%20%3Fdate%3B%0A%20%20%20%20ps%3AP8010%20%3Frecoveries.%0A%7D%0AORDER%20BY%20%28%3Fdate%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
 					</div>
 				</div>
     			</div>
     		<div class="is-hidden" id="death-tab-content">
-      			<h5 class="title is-5" style="text-align:center;"> Death cases in Kerala </h5>
+      			<h5 class="title is-5" style="text-align:center;"> Death cases in Goa </h5>
 				<div class="columns is-centered"
 					<div class="level is-mobile">
-						<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Fdate%20%3Fdeaths%20WHERE%20%7B%0A%20%20wd%3AQ87429464%20wdt%3AP1120%20%3Fdeaths%3B%0A%20%20%20%20p%3AP1120%20%3Fst.%0A%20%20%3Fst%20pq%3AP585%20%3Fdate%3B%0A%20%20%20%20ps%3AP1120%20%3Fdeaths.%0A%7D%0AORDER%20BY%20%28%3Fdate%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
+						<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Fdate%20%3Fdeaths%20WHERE%20%7B%0A%20%20wd%3AQ88672484%20wdt%3AP1120%20%3Fdeaths%3B%0A%20%20%20%20p%3AP1120%20%3Fst.%0A%20%20%3Fst%20pq%3AP585%20%3Fdate%3B%0A%20%20%20%20ps%3AP1120%20%3Fdeaths.%0A%7D%0AORDER%20BY%20%28%3Fdate%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
 					</div>
 				</div>
     			</div>
     		<div class="is-hidden" id="test-tab-content">
-      			<<h5 class="title is-5" style="text-align:center;"> Number of clinical tests done in Kerala </h5>
+      			<<h5 class="title is-5" style="text-align:center;"> Number of clinical tests done in Goa </h5>
 				<div class="columns is-centered"
 					<div class="level is-mobile">
-						<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Fdate%20%3Ftests%20WHERE%20%7B%0A%20%20wd%3AQ87429464%20wdt%3AP8011%20%3Ftests%3B%0A%20%20%20%20p%3AP8011%20%3Fst.%0A%20%20%3Fst%20pq%3AP585%20%3Fdate%3B%0A%20%20%20%20ps%3AP8011%20%3Ftests.%0A%7D%0AORDER%20BY%20%28%3Fdate%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
+						<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Fdate%20%3Ftests%20WHERE%20%7B%0A%20%20wd%3AQ88672484%20wdt%3AP8011%20%3Ftests%3B%0A%20%20%20%20p%3AP8011%20%3Fst.%0A%20%20%3Fst%20pq%3AP585%20%3Fdate%3B%0A%20%20%20%20ps%3AP8011%20%3Ftests.%0A%7D%0AORDER%20BY%20%28%3Fdate%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
 					</div>
 				</div>
     			</div>
