@@ -15,18 +15,18 @@
 <style>
  #mySidenav a {
   position: absolute;
-  left: -70px;
+  right: -105px;
   transition: 0.3s;
-  padding: 15px;
-  width: 130px;
+  padding: 12px;
+  width: 160px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 30px;
   color: white;
-  border-radius: 0 5px 5px 0;
+  border-radius: 10px 0 0 10px;
  }
 
  #mySidenav a:hover {
-left: 0;
+right: 0;
 }
 
 #home {
@@ -34,19 +34,88 @@ left: 0;
   background-color: #4CAF50;
 }
 
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  opacity: 0.8;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
 .footer{
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
 }
 
 </style>
 </head>
 	<body>
-
-	<div id="mySidenav" class="sidenav">
-  		<a href="./../" id="home"><span> Home </span><i class="fa fa-home"></i></a>
+	<div align=left><div class="dropdown">
+  		<button class="dropbtn"><i class="fa fa-bars"></i> States / UT's Dashboard </button>
+  			<div class="dropdown-content">
+				<a href="./Andaman and Nicobar">Andaman and Nicobar</a>
+    				<a href="./Andhra Pradesh">Andhra Pradesh</a>
+   				<a href="./Arunachal Pradesh">Arunachal Pradesh</a>
+   		 		<a href="./Assam">Assam</a>
+    				<a href="./Bihar">Bihar</a>
+    				<a href="./Chandigarh">Chandigarh</a>
+    				<a href="./Chhattisgarh">Chhattisgarh</a>
+    				<a href="./Delhi">Delhi</a>
+    				<a href="./Goa">Goa</a>
+    				<a href="./Gujarat">Gujarat</a>
+    				<a href="./Haryana">Haryana</a>
+    				<a href="./Jammu and Kashmir">Jammu and Kashmir</a>
+    				<a href="./Jharkhand">Jharkhand</a>
+    				<a href="./Karnataka">Karnataka</a>
+    				<a href="./Kerala">Kerala</a>
+   				<a href="./Ladakh">Ladakh</a>
+    				<a href="./Madhya Pradesh">Madhya Pradesh</a>
+    				<a href="./Maharashtra">Maharashtra</a>
+    				<a href="./Manipur">Manipur</a>
+    				<a href="./Megalaya">Megalaya</a>
+    				<a href="./Mizoram">Mizoram</a>
+    				<a href="./Odisha">Odisha</a>
+    				<a href="./Puducherry">Puducherry</a>
+    				<a href="./Punjab">Punjab</a>
+    				<a href="./Tamil Nadu">Tamil Nadu</a>
+    				<a href="./Tripura">Tripura</a>
+    				<a href="./Uttar Pradesh">Uttar Pradesh</a>
+    				<a href="./Uttarakhand">Uttarakhand</a>
+    				<a href="./West Bengal">West Bengal</a>
+     			 </div>
+		</div>
 	</div>
-	</br>
+	<div id="mySidenav" class="sidenav">
+  		<a href="./../" id="home"><span><i class="fa fa-home"></i> Home </span></a>
+	</div>
 	<section class="section">
     		<div class="container">
 			<div class="columns is-centered">
@@ -59,23 +128,33 @@ left: 0;
 			</div>
 		</div>
   	</section>
-	<section class="section extra">
+	<section class="section">
 		<div class="columns is-centered">
 			<div class="column is-half">
 				<div class="content">
-					<div class="content">
 					<h4 class="title is-4"> Introduction </h4>
 					<ul>
 					<p>WHO has declared Coronavirus disease (COVID-19) as epidemic affecting 184 countries as Pandemic. The first case of the <a href="https://www.wikidata.org/wiki/Q84055514">2020 coronavirus pandemic in India</a> was reported on 30 January 2020 in Kerala State, originating from China.
 					<p>A on-wiki page was created in Wikidata under <a href="https://www.wikidata.org/wiki/Wikidata:WikiProject_India">WikiProject India</a> to co-ordinate the activities as the disease is spreading rapidly in different states of India.
 					<p>This dashboard is created to visualize data that are added to Wikidata related to coronavirus 
-in India and it's States / Union Territories
+in India and it's States / Union Territories.
 					</ul>
-					</div>
 				</div>
 			</div>
 		</div>
-	<section>
+	</section>
+	<section class="section">
+		<div class="columns is-centered">
+			<div class="column is-half">
+				<div class="content">
+					<h5 class="title is-5"> Acknowledgement </h5>
+  					<ul>
+					<p>This project aims to visualize the data in the <strong>Wikidata</strong> that are contributed by several volunteers from different language communities, states and regions as part of COVID-19 task force by WikiProject India. For more details visit <a href="https://www.wikidata.org/wiki/Wikidata:WikiProject_India/COVID-19_task_force">COVID-19 Task force India</a>.
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
