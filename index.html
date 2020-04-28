@@ -2,33 +2,20 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>COVID19 INDIA DASHBOARD</title>
 	<meta name="keywords" content="COVID-19, COVID-19 in India, Corona virus in India, Wikidata">
 	<meta property="og:description" content="powered by Wikidata">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/png" sizes="32x32" href="./favicon/WikiProject_India_Wikidata_logo-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="./favicon/WikiProject_India_Wikidata_logo-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./../favicon/WikiProject_India_Wikidata_logo-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./../favicon/WikiProject_India_Wikidata_logo-192x192.png">
 	<link rel="manifest" href="./../favicon/site.webmanifest">
-  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="./india.css" rel="stylesheet">
+	<link href="./Style.css" rel="stylesheet">
 </head>
-
-<body>
-<div align=right>
-<button class="button1"><a href="./India" style="color:white; text-decoration: none; right: 0;"> India Dashboard </a></button>
-</div>
-		<div class="container">
-			<div class="columns is-centered">
-				<div class="column is-half has-text-centered">
-					<h1 class="title is-2">COVID19 INDIA DASHBOARD</h1>
-					<h2 class="title is-6">(Initiative by WikiProject India)</h2>
-				</div>
-			</div>
-		</div>
-</br>
-<div align=left><div class="dropdown">
+	<body>
+	<div align=left><div class="dropdown">
   		<button class="dropbtn"><i class="fa fa-bars"></i> States / UT's Dashboard </button>
   			<div class="dropdown-content">
 				<a href="./Andaman and Nicobar">Andaman and Nicobar</a>
@@ -61,43 +48,61 @@
     				<a href="./Uttarakhand">Uttarakhand</a>
     				<a href="./West Bengal">West Bengal</a>
      			 </div>
-	 </div>
- </div>
-	<section class="section extra">
+		</div>
+	</div>
+	<div id="mySidenav" class="sidenav">
+  		<a href="#" id="home"><span><i class="fa fa-home"></i> Home </span></a>
+	</div>
+	<section class="section">
+    		<div class="container">
+			<div class="columns is-centered">
+				<div class="column is-half has-text-centered">
+      					<h1 class="title is-2">COVID19 INDIA DASHBOARD</h1>
+					<p class="subtitle">
+       			 		(Initiative by WikiProject India)
+      					</p>
+    				</div>
+			</div>
+			<button class="btn"><a href="./India" style="color:white; text-decoration: none; right: 0;"> Go to Dashboard of India </a></button>
+		</div>
+  	</section>
+	<section class="section">
 		<div class="columns is-centered">
 			<div class="column is-half">
 				<div class="content">
-					<div class="content">
 					<h4 class="title is-4"> Introduction </h4>
 					<ul>
 					<p>WHO has declared Coronavirus disease (COVID-19) as epidemic affecting 184 countries as Pandemic. The first case of the <a href="https://www.wikidata.org/wiki/Q84055514">2020 coronavirus pandemic in India</a> was reported on 30 January 2020 in Kerala State, originating from China.
 					<p>A on-wiki page was created in Wikidata under <a href="https://www.wikidata.org/wiki/Wikidata:WikiProject_India">WikiProject India</a> to co-ordinate the activities as the disease is spreading rapidly in different states of India.
 					<p>This dashboard is created to visualize data that are added to Wikidata related to coronavirus 
-in India and it's States / Union Territories
+in India and it's States / Union Territories.
 					</ul>
-					</div>
 				</div>
 			</div>
 		</div>
-	<section>
-</div>
-  	<section class="section extra">
+	</section>
+	<section class="section">
 		<div class="columns is-centered">
 			<div class="column is-half">
 				<div class="content">
 					<h5 class="title is-5"> Acknowledgement </h5>
   					<ul>
-						<li> This project aims to visualize the data in the <strong>Wikidata</strong> that are contributed by several volunteers from different language communities, states and regions as part of COVID-19 task force by WikiProject India. For more details visit <a href="https://www.wikidata.org/wiki/Wikidata:WikiProject_India/COVID-19_task_force">COVID-19 Task force India</a>.</li>
-		  			</ul>
+					<p>This project aims to visualize the data in the <strong>Wikidata</strong> that are contributed by several volunteers from different language communities, states and regions as part of COVID-19 task force by WikiProject India. For more details visit <a href="https://www.wikidata.org/wiki/Wikidata:WikiProject_India/COVID-19_task_force">COVID-19 Task force India</a>.
+					</ul>
 				</div>
 			</div>
 		</div>
 	</section>
-  <footer class="footer">
-	<div class="content has-text-centered">
-		<p><a href="https://www.wikidata.org/"><img src="./Images/Wikidata_Stamp_Rec_Light.png"></a></p>
-<p>available under the Creative Commons CC0 License</p><p>Designed & Developed by <a href="https://www.wikidata.org/wiki/User:Gnoeee">Gnoeee</a></p>
-	</div>
-   </footer>
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        <p><a href="https://www.wikidata.org/"><img src="./Images/Wikidata_Stamp_Rec_Light.png"></a></p>
+        The content is licensed <a href="https://creativecommons.org/publicdomain/zero/1.0/">under Creative Commons CC0</a>
+      <p> <strong>Dashboard</strong> designed and developed by <a href="https://www.wikidata.org/wiki/User:Gnoeee">Gnoeee</a>
+      </p>
+    </div>
+  </div>
+</footer>
 </body>
-</html>
+</html> 
