@@ -1,3 +1,11 @@
+<style type="text/css">
+#main-content {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 100px 0 0;
+}
+
+
 .block {
   display: block;
   width: 100%;
@@ -89,26 +97,25 @@ right: 0;
 .btn:hover {opacity: 0.6}
 
 .section{
-    padding-top: 30px;
+    padding-top: 80px;
     padding-bottom: 50px;
 }
 
-.iframe-container {
-  overflow: hidden;
-  padding-top: 75%;
-  position: relative;
-} 
+.responsive {
+ width: 100%;
+ height: 0;
+ padding-bottom: 56,25%;
+ position: relative;
+}
 
-.iframe-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border: 0;
-  width: 100%;
-  height: 100%;
+.responsive iframe {
+ position: absolute;
+ width: 100%;
+ height: 100%;
 }
 
 .footer{
     padding-top: 10px;
     padding-bottom: 30px;
 }
+</style>
