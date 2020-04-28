@@ -79,7 +79,7 @@ right: 0;
   padding: 16px 32px;
   font-size: 16px;
   margin:auto;
- border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
   opacity: 1;
   transition: 0.8s;
   display: flex; 
@@ -94,85 +94,22 @@ right: 0;
 }
 
 .iframe-container {
-  overflow: hidden;
-  padding-top: 56.25%;
-  position: relative;
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
 }
  
 .iframe-container iframe {
    border: 0;
-   height: 100%;
    left: 0;
    position: absolute;
    top: 0;
-   width: 100%;
+   max-height:95%
+   max-width:95%
 }
 
-#query-result {
-	height: 97vh;
-}
-
-#query-result .jstree {
-	width: 100%;
-	height: auto;
-	padding: 25px 50px;
-}
-
-@media only screen and (max-height: 285px) {
-	.header-toolbar {
-		z-index: 1000;
-		position: fixed;
-		left: -97px;
-		top: 20vh;
-		padding-top: 0.5em;
-		opacity: 0.6;
-		width: 150px;
-		height: 65vh;
-		overflow-y: scroll;
-		overflow-x: hidden;
-	}
-}
-
-@media only screen and (max-height: 430px) {
-	#embed-right-menu {
-		list-style-type: none;
-		overflow-y: scroll;
-		overflow-x: hidden;
-		height: 57vh;
-		position: static;
-	}
-}
-
-@media only screen and (max-height: 450px) {
-	.download-dropdown-menu {
-		left: -50px;
-		top: -40px;
-		height: 61vh;
-		overflow-y: scroll;
-	}
-}
-
-@media only screen and (max-width: 400px) {
-	.toolbar-right {
-		display: none;
-	}
-
-	.header-toolbar {
-		display: none;
-	}
-
-	.bootstrap-table {
-		width: 100%;
-		height: auto;
-		padding: 0px;
-	}
-
-	.jstree {
-		width: 100%;
-		height: auto;
-		padding: 0px;
-	}
-
+.iframe-container-4x3 {
+  padding-top: 75%;
 }
 
 .footer{
