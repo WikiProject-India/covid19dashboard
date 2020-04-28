@@ -93,25 +93,6 @@ right: 0;
     padding-bottom: 50px;
 }
 
-.iframe-container {
-    position: relative;
-    overflow: hidden;
-    padding-top: 56.25%;
-}
- 
-.iframe-container iframe {
-   border: 0;
-   left: 0;
-   position: absolute;
-   top: 0;
-   max-height:95%
-   max-width:95%
-}
-
-.iframe-container-4x3 {
-  padding-top: 75%;
-}
-
 .footer{
     padding-top: 10px;
     padding-bottom: 30px;
