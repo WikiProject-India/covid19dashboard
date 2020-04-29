@@ -146,6 +146,18 @@ right: 0;
   	}
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+#sec1 {
+  height: 1px;
+}
+
+#sec2 {
+  height: 1px;
+}
+
 .footer{
     padding-top: 10px;
     padding-bottom: 30px;
