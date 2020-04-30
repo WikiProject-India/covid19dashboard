@@ -136,14 +136,9 @@ right: 0;
 }
 
 .container {
-    max-width: 98%;
+    max-width: 100%;
 }
 
-@media (min-width: 992px) {
-  	.container {
-    	max-width: 980px;
-  	}
-}
 
 html {
   scroll-behavior: smooth;
