@@ -1,13 +1,13 @@
-function makeSPARQLQuery( endpointUrl, sparqlQuery, doneCallback ) {
-	var settings = {
-		headers: { Accept: 'application/sparql-results+json' },
-		data: { query: sparqlQuery }
-	};
-	return $.ajax( endpointUrl, settings ).then( doneCallback );
-}
+ function makeSPARQLQuery( endpointUrl, sparqlQuery, doneCallback ) {
+      var settings = {
+        headers: { Accept: 'application/sparql-results+json' },
+        data: { query: sparqlQuery }
+      };
+      return $.ajax( endpointUrl, settings ).then( doneCallback );
+    }
 
-var endpointUrl = 'https://query.wikidata.org/sparql',
-	sparqlQuery = "SELECT DISTINCT ?item ?itemLabel ?state ?stateLabel ?start_time ?cases ?cases_time ?recs ?recs_time ?deaths ?deaths_time ?tests ?tests_time\n" +
+    var endpointUrl = 'https://query.wikidata.org/sparql',
+    sparqlQuery = "SELECT DISTINCT ?stateLabel ?cases ?recs ?deaths ?tests\n" +
         "WITH {\n" +
         "  SELECT ?item ?dist ?state ?cases ?cases_time {\n" +
         "    wd:Q84055514 wdt:P527 ?item. ?item wdt:P276 ?state.\n" +
@@ -47,8 +47,27 @@ var endpointUrl = 'https://query.wikidata.org/sparql',
         "}\n" +
         "ORDER BY DESC (?cases)";
 
-makeSPARQLQuery( endpointUrl, sparqlQuery, function( data ) {
-		$( 'body' ).append( $( '<pre>' ).text( JSON.stringify( data ) ) );
-		console.log( data );
-	}
-);
+    $(document).ready(function() {
+          makeSPARQLQuery( endpointUrl, sparqlQuery, function( data ) {
+              $.each(data.results.bindings, function(index, element) {
+                  if(element.stateLabel.value == active_state) {
+                    var cases = element.cases.value;
+                    var recovery = element.recs.value;
+                    var deaths = element.deaths.value;
+                    var tests = element.tests.value;
+
+                    var output_html = '<tr>'
+                                        +'<td>'+cases+'</td>'
+                                        +'<td>'+recovery+'</td>'
+                                        +'<td>'+deaths+'</td>'
+                                        +'<td>'+tests+'</td>'
+                                      +'</tr>';
+
+                    console.log(output_html);
+
+                    $('#stats_table').html(output_html);
+                  }
+              });
+            }
+          );
+    });

@@ -12,8 +12,6 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="./../Style.css" rel="stylesheet">
-	<script src="./jquery.min.js"></script>
-	<script src="https://d3js.org/d3.v3.min.js"></script>
 </head>
 	<body>
 	<div align=left><div class="dropdown">
@@ -69,32 +67,35 @@
 		<div class="column is-half has-text-centered">
   	</section>
 	<div class="container">
-		<div class="columns is-centered">
-			<div class="column is-half has-text-centered">
-				<h4 class="subtitle is-4">
-       				Dashboard of India
-      				</p>
+			<div class="columns is-centered">
+				<div class="column is-half has-text-centered">
+					<h4 class="subtitle is-4">
+       					Dashboard of India
+          </h4>
+				</div>
 			</div>
-		</div>
 	</div>
-	<div class="columns is-mobile is-multiline is-centered">
- 		 <div class="column is-narrow">
-			<table class="table">
-  				<thead>
-				<tr>
-    					<th>Cases</th>
-    					<th>Recovery</th>
-    					<th>Deaths</th>
-    					<th>Clinical Tests</th>
-				</tr>
-  		 		</thead>
-  				<tbody></tbody>
-			</table>
-		</div>
-	</div>
+  <div class="columns is-mobile is-multiline is-centered">
+     <div class="column is-narrow">
+      <table class="table">
+          <thead>
+            <tr>
+                  <th>Cases</th>
+                  <th>Recovery</th>
+                  <th>Deaths</th>
+                  <th>Clinical Tests</th>
+            </tr>
+          </thead>
+          <tbody id="stats_table">
+            
+          </tbody>
+      </table>
+    </div>
+  </div>
 	<div class="arrow bounce">
   <a class="fa fa-arrow-down fa-2x" href="#sec1"></a>
 	</div>
+	</br>
   	<section class="section top">
 		<div class="container" id="sec1">
 			<div class="columns is-centered">
@@ -137,14 +138,14 @@
 		</div>
 	</section>
 	<div class="container">
-    		<div id="all-tab-content" class="">
-			<h5 class="title is-5" style="text-align:center;"> Confirmed vs Recovered vs Death cases in India</h5>
-      				<div class="columns is-centered"
+    	<div id="all-tab-content" class="">
+			   <h5 class="title is-5" style="text-align:center;"> Confirmed vs Recovered vs Death cases in India</h5>
+      	<div class="columns is-centered"
 					<p style="text-align: center">
 					<iframe src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Fdate%20%3Fnumber%20%3Ffigure%20%7B%0A%20%20BIND%28wd%3AQ84055514%20as%20%3Fpandemic_item%29%0A%20%20%7B%20%3Fpandemic_item%20p%3AP1603%20%5Bps%3AP1603%20%3Fnumber%20%3B%20pq%3AP585%20%3Fdate%5D.%20BIND%28%22cases%22%20as%20%3Ffigure%29%20%7D%0A%20%20UNION%0A%20%20%7B%20%3Fpandemic_item%20p%3AP1120%20%5Bps%3AP1120%20%3Fnumber%20%3B%20pq%3AP585%20%3Fdate%5D.%20BIND%28%22deaths%22%20as%20%3Ffigure%29%20%7D%0A%20%20UNION%0A%20%20%7B%20%3Fpandemic_item%20p%3AP8010%20%5Bps%3AP8010%20%3Fnumber%20%3B%20pq%3AP585%20%3Fdate%5D.%20BIND%28%22recoveries%22%20as%20%3Ffigure%29%20%7D%0A%20%20UNION%0A%20%20%7B%20%3Fpandemic_item%20p%3AP8011%20%5Bps%3AP8011%20%3Fnumber%20%3B%20pq%3AP585%20%3Fdate%5D.%20BIND%28%22tests%22%20as%20%3Ffigure%29%20%7D%0A%7D" scrolling="yes" width="85%" height="450" class="iframe-class" frameborder="0"></iframe>
 					</p>
 				</div>
-   			</div>
+   		</div>
    		<div class="is-hidden" id="confirmed-tab-content">
       			<h5 class="title is-5" style="text-align:center;"> Confirmed cases in India </h5>
 				<div class="columns is-centered"
@@ -180,8 +181,7 @@
   	</div>
 	</br>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="query.js"</script>  
-<script>
+  <script>
     function switchToAll() {
       removeActive();
       hideAll();
@@ -255,5 +255,84 @@
     </div>
   </div>
 </footer>
+  <script>
+function makeSPARQLQuery( endpointUrl, sparqlQuery, doneCallback ) {
+      var settings = {
+        headers: { Accept: 'application/sparql-results+json' },
+        data: { query: sparqlQuery }
+      };
+      return $.ajax( endpointUrl, settings ).then( doneCallback );
+    }
+
+    var endpointUrl = 'https://query.wikidata.org/sparql',
+    sparqlQuery = "SELECT DISTINCT ?stateLabel ?cases ?recs ?deaths ?tests\n" +
+        "WITH {\n" +
+        "  SELECT ?item ?dist ?state ?cases ?cases_time {\n" +
+        "    wd:Q84055514 wdt:P527 ?item. ?item wdt:P276 ?state.\n" +
+        "    OPTIONAL { ?item p:P1603 ?casestmt. ?casestmt ps:P1603 ?cases. OPTIONAL { ?casestmt pq:P585 ?cases_time } }\n" +
+        "    FILTER NOT EXISTS { ?item p:P1603/pq:P585 ?cases_time_ . FILTER(?cases_time_ > ?cases_time) }\n" +
+        "  }\n" +
+        "}\n" +
+        "AS %cases\n" +
+        "WITH {\n" +
+        "  SELECT ?item ?deaths ?deaths_time {\n" +
+        "    wd:Q84055514 wdt:P527 ?item.\n" +
+        "    OPTIONAL { ?item p:P1120 ?deathstmt. ?deathstmt ps:P1120 ?deaths. OPTIONAL { ?deathstmt pq:P585 ?deaths_time } }\n" +
+        "    FILTER NOT EXISTS { ?item p:P1120/pq:P585 ?deaths_time_ . FILTER(?deaths_time_ > ?deaths_time) }\n" +
+        "  }\n" +
+        "}\n" +
+        "AS %deaths\n" +
+        "WITH {\n" +
+        "  SELECT ?item ?recs ?recs_time {\n" +
+        "    wd:Q84055514 wdt:P527 ?item.\n" +
+        "    OPTIONAL { ?item p:P8010 ?recstmt. ?recstmt ps:P8010 ?recs. OPTIONAL { ?recstmt pq:P585 ?recs_time } }\n" +
+        "    FILTER NOT EXISTS { ?item p:P8010/pq:P585 ?recs_time_ . FILTER(?recs_time_ > ?recs_time) }\n" +
+        "  }\n" +
+        "}\n" +
+        "AS %recs\n" +
+        "WITH {\n" +
+        "  SELECT ?item ?tests ?tests_time {\n" +
+        "    wd:Q84055514 wdt:P527 ?item.\n" +
+        "    OPTIONAL { ?item p:P8011 ?testmt. ?testmt ps:P8011 ?tests. OPTIONAL { ?testmt pq:P585 ?tests_time } }\n" +
+        "    FILTER NOT EXISTS { ?item p:P8011/pq:P585 ?tests_time_ . FILTER(?tests_time_ > ?tests_time) }\n" +
+        "  }\n" +
+        "}\n" +
+        "AS %tests\n" +
+        "WHERE {\n" +
+        "  INCLUDE %cases. INCLUDE %deaths. INCLUDE %recs. INCLUDE %tests.\n" +
+        "  OPTIONAL { ?item wdt:P580 ?start_time. }\n" +
+        "  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],en\". }\n" +
+        "}\n" +
+        "ORDER BY DESC (?cases)";
+
+    $(document).ready(function() {
+          makeSPARQLQuery( endpointUrl, sparqlQuery, function( data ) {
+              $.each(data.results.bindings, function(index, element) {
+                  if(element.stateLabel.value == active_state) {
+                    var cases = element.cases.value;
+                    var recovery = element.recs.value;
+                    var deaths = element.deaths.value;
+                    var tests = element.tests.value;
+
+                    var output_html = '<tr>'
+                                        +'<td>'+cases+'</td>'
+                                        +'<td>'+recovery+'</td>'
+                                        +'<td>'+deaths+'</td>'
+                                        +'<td>'+tests+'</td>'
+                                      +'</tr>';
+
+                    console.log(output_html);
+
+                    $('#stats_table').html(output_html);
+                  }
+              });
+            }
+          );
+    });
+</script>  
+<script src="./state_table_data.js"></script>
+<script type="text/javascript">
+    var active_state = "Maharashtra";
+</script>
 </body>
 </html> 
