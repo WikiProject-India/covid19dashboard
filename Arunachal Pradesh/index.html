@@ -57,9 +57,8 @@
 			<div class="columns is-centered">
 				<div class="column is-half has-text-centered">
       					<h1 class="title is-1">COVID19 INDIA DASHBOARD</h1>
-					<h2 class="subtitle is-3">
+					<h2 class="subtitle is-4">
        			 		(Initiative by WikiProject India)
-      					</p>
     				</div>
 			</div>
 			<button class="btn"><a href="./../India" style="color:white; text-decoration: none; right: 0;"> Go to Dashboard of India </a></button>
@@ -75,12 +74,28 @@
 				</div>
 			</div>
 	</div>
+ <div class="columns is-mobile is-multiline is-centered">
+     <div class="column is-narrow">
+      <table class="table is-bordered">
+          <thead>
+            <tr>
+                  <th>Cases</th>
+                  <th>Recovered</th>
+                  <th>Deceased</th>
+                  <th>Clinical Tests</th>
+            </tr>
+          </thead>
+          <tbody id="stats_table" class="has-text-centered">
+          </tbody>
+      </table>
+    </div>
+  </div>
 	<div class="arrow bounce">
-  <a class="fa fa-arrow-down fa-2x" href="#sec1"></a>
+  <a class="fa fa-arrow-down fa-2x" href="#query"></a>
 	</div>
 	</br>
-  	<section class="section top">
-		<div class="container" id="sec1">
+	<section class="section extra">
+		<div class="container" id="query">
 			<div class="columns is-centered">
    				 <div class="tabs is-centered">
     					<ul>
@@ -125,7 +140,7 @@
 			<h5 class="title is-5" style="text-align:center;"> Confirmed vs Recovered vs Death cases in Arunachal Pradesh </h5>
       				<div class="columns is-centered"
 					<p style="text-align: center">
-						<iframe width="85%" height="500"  src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Ftime%20%3Fnumber%20%3Ffigure%20%7B%0A%20%20BIND%28wd%3AQ89416454%20as%20%3Fpandemic_item%29%0A%20%20%7B%20%3Fpandemic_item%20p%3AP1603%20%5Bps%3AP1603%20%3Fnumber%20%3B%20pq%3AP585%20%3Ftime%5D.%20BIND%28%22cases%22%20as%20%3Ffigure%29%20%7D%0A%20%20UNION%0A%20%20%7B%20%3Fpandemic_item%20p%3AP1120%20%5Bps%3AP1120%20%3Fnumber%20%3B%20pq%3AP585%20%3Ftime%5D.%20BIND%28%22deaths%22%20as%20%3Ffigure%29%20%7D%0A%20%20UNION%0A%20%20%7B%20%3Fpandemic_item%20p%3AP8010%20%5Bps%3AP8010%20%3Fnumber%20%3B%20pq%3AP585%20%3Ftime%5D.%20BIND%28%22recoveries%22%20as%20%3Ffigure%29%20%7D%0A%7D" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
+						<iframe width=92% height="500"  src="https://w.wiki/PeH"></iframe>
 					</P>
 				</div>
    			</div>
@@ -133,7 +148,7 @@
       			<h5 class="title is-5" style="text-align:center;"> Confirmed cases in Arunachal Pradesh </h5>
 				<div class="columns is-centered"
 					<p style="text-align: center">
-						<iframe width="85%" height="500"  src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Fdate%20%3Fcases%20WHERE%20%7B%0A%20%20wd%3AQ89416454%20wdt%3AP1603%20%3Fcases%3B%0A%20%20%20%20p%3AP1603%20%3Fst.%0A%20%20%3Fst%20pq%3AP585%20%3Fdate%3B%0A%20%20%20%20ps%3AP1603%20%3Fcases.%0A%7D%0AORDER%20BY%20%28%3Fdate%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
+						<iframe width=92% height="500"  src="https://w.wiki/PeJ" ></iframe>
 					</p>
 				</div>
     			</div>
@@ -141,7 +156,7 @@
       			<h5 class="title is-5" style="text-align:center;"> Recovered cases in Arunachal Pradesh </h5>
 				<div class="columns is-centered"
 					<p style="text-align: center">
-						<iframe width="85%" height="500"  src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Fdate%20%3Frecoveries%20WHERE%20%7B%0A%20%20wd%3AQ89416454%20wdt%3AP8010%20%3Frecoveries%3B%0A%20%20%20%20p%3AP8010%20%3Fst.%0A%20%20%3Fst%20pq%3AP585%20%3Fdate%3B%0A%20%20%20%20ps%3AP8010%20%3Frecoveries.%0A%7D%0AORDER%20BY%20%28%3Fdate%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
+						<iframe width=92% height="500"  src="https://w.wiki/PeK"></iframe>
 					</div>
 				</div>
     			</div>
@@ -149,7 +164,7 @@
       			<h5 class="title is-5" style="text-align:center;"> Death cases in Arunachal Pradesh </h5>
 				<div class="columns is-centered"
 					<div class="level is-mobile">
-						<iframe style="width: 60vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Fdate%20%3Fdeaths%20WHERE%20%7B%0A%20%20wd%3AQ89416454%20wdt%3AP1120%20%3Fdeaths%3B%0A%20%20%20%20p%3AP1120%20%3Fst.%0A%20%20%3Fst%20pq%3AP585%20%3Fdate%3B%0A%20%20%20%20ps%3AP1120%20%3Fdeaths.%0A%7D%0AORDER%20BY%20%28%3Fdate%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
+						<iframe width=92% height="500"  src="https://w.wiki/PeL"></iframe>
 					</div>
 				</div>
     			</div>
@@ -157,7 +172,7 @@
       			<<h5 class="title is-5" style="text-align:center;"> Number of clinical tests done in Arunachal Pradesh </h5>
 				<div class="columns is-centered"
 					<div class="level is-mobile">
-						<iframe style="width: 60vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Fdate%20%3Ftests%20WHERE%20%7B%0A%20%20wd%3AQ89416454%20wdt%3AP8011%20%3Ftests%3B%0A%20%20%20%20p%3AP8011%20%3Fst.%0A%20%20%3Fst%20pq%3AP585%20%3Fdate%3B%0A%20%20%20%20ps%3AP8011%20%3Ftests.%0A%7D%0AORDER%20BY%20%28%3Fdate%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
+						iframe width=92% height="500"  src="https://w.wiki/PeN" ></iframe>
 					</div>
 				</div>
     			</div>
@@ -213,24 +228,33 @@
       $("#test-tab-content").addClass("is-hidden");
     }
 	
-  </script>
+  </script></br>
   	<section class="section extra">
 		<div class="columns is-centered">
 			<div class="column is-half">
 				<div class="content">
 					<h5 class="title is-5"> Acknowledgement </h5>
   					<ul>
-						<li> This project aims to visualize the data in the <strong>Wikidata</strong> that are contributed by several volunteers from different language communities, states and regions as part of COVID-19 task force by WikiProject India. For more details visit <a href="https://www.wikidata.org/wiki/Wikidata:WikiProject_India/COVID-19_task_force">COVID-19 Task force India</a>.</li>
+					<p>This project aims to visualize the data in the <strong>Wikidata</strong> that are contributed by several volunteers from different language communities, states and regions as part of COVID-19 task force by WikiProject India. This project uses sparql queries to display data from Wikidata and more queries are available <a https://www.wikidata.org/wiki/Wikidata:WikiProject_India/COVID-19_task_force/Queries">here</a>. For more details visit <a href="https://www.wikidata.org/wiki/Wikidata:WikiProject_India/COVID-19_task_force">COVID-19 Task force India</a>.
 		  			</ul>
 				</div>
 			</div>
 		</div>
 	</section>
-  <footer class="footer">
-	<div class="content has-text-centered">
-		<p><a href="https://www.wikidata.org/"><img src="./../Images/Wikidata_Stamp_Rec_Light.png"></a></p>
-<p>available under the Creative Commons CC0 License</p><p>Developed by <a href="https://www.wikidata.org/wiki/User:Gnoeee/">Gnoeee</a></p>
-	</div>
-   </footer>
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        <p><a href="https://www.wikidata.org/"><img src="./../Images/Wikidata_Stamp_Rec_Light.png"></a></p>
+        The content is licensed <a href="https://creativecommons.org/publicdomain/zero/1.0/">under Creative Commons CC0</a>
+      <p> <strong>Dashboard</strong> designed and developed by <a href="https://www.wikidata.org/wiki/User:Gnoeee">Gnoeee</a>
+      </p>
+    </div>
+  </div>
+</footer>
+ <script src="./../state_table_data.js"></script>
+    <script type="text/javascript">
+    var active_state = "Arunachal Pradesh";
+</script>
 </body>
 </html>
