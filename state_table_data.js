@@ -52,15 +52,15 @@
               $.each(data.results.bindings, function(index, element) {
                   if(element.stateLabel.value == active_state) {
                     var cases = element.cases.value;
-                    var recovery = element.recs.value;
-                    var deaths = element.deaths.value;
+                    var recovered = element.recs.value;
+                    var deceased = element.deaths.value;
                     var tests = element.tests.value;
 
                     var output_html = '<tr>'
-                                        +'<td>'+cases+'</td>'
-                                        +'<td>'+recovery+'</td>'
-                                        +'<td>'+deaths+'</td>'
-                                        +'<td>'+tests+'</td>'
+                                        +'<td><center>'+cases+'</center></td>'
+                                        +'<td><center>'+recovered+'</center></td>'
+                                        +'<td><center>'+deceased+'</center></td>'
+                                        +'<td><center>'+tests+'</center></td>'
                                       +'</tr>';
 
                     console.log(output_html);

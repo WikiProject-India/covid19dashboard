@@ -96,13 +96,13 @@ right: 0;
 .btn:hover {opacity: 0.6}
 
 .section{
-    padding-top: 25px;
+    padding-top: 30px;
     padding-bottom: 36px;
 }
 
 .arrow {
   text-align: center;
-  margin: 8% 0;
+  margin: 6% 0;
 }
 .bounce {
   -moz-animation: bounce 2s infinite;
@@ -127,16 +127,21 @@ right: 0;
 }
 
 
+.table {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
 html {
   scroll-behavior: smooth;
 }
 
-#sec1 {
-  height: 1px;
+#query {
+  height: 2px;
 }
 
-#sec2 {
-  height: 1px;
+#bottom {
+  height: 2px;
 }
 
 .footer{
