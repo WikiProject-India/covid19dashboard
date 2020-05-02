@@ -28,6 +28,7 @@
     				<a href="./../Goa">Goa</a>
     				<a href="./../Gujarat">Gujarat</a>
     				<a href="./../Haryana">Haryana</a>
+				<a href="./../Himachal Pradesh">Himachal Pradesh</a>
     				<a href="./../Jammu and Kashmir">Jammu and Kashmir</a>
     				<a href="./../Jharkhand">Jharkhand</a>
     				<a href="./../Karnataka">Karnataka</a>
@@ -57,7 +58,7 @@
 			<div class="columns is-centered">
 				<div class="column is-half has-text-centered">
       					<h1 class="title is-1">COVID19 INDIA DASHBOARD</h1>
-					<h2 class="subtitle is-3">
+					<h2 class="subtitle is-4">
        			 		(Initiative by WikiProject India)
       					</p>
     				</div>
@@ -75,12 +76,29 @@
 				</div>
 			</div>
 	</div>
+ <div class="columns is-mobile is-multiline is-centered">
+     <div class="column is-narrow">
+      <table class="table is-bordered">
+          <thead>
+            <tr>
+                  <th>Cases</th>
+                  <th>Recovered</th>
+                  <th>Deceased</th>
+                  <th>Clinical Tests</th>
+            </tr>
+          </thead>
+          <tbody id="stats_table" class="has-text-centered">
+          </tbody>
+      </table>
+    </div>
+  </div>
 	<div class="arrow bounce">
-  <a class="fa fa-arrow-down fa-2x" href="#sec1"></a>
+  <a class="fa fa-arrow-down fa-2x" href="#query"></a>
 	</div>
 	</br>
-  	<section class="section top">
-		<div class="container" id="sec1">
+	</br>
+	<section class="section extra">
+		<div class="container" id="query">
 			<div class="columns is-centered">
    				 <div class="tabs is-centered">
     					<ul>
@@ -215,6 +233,7 @@
     }
 	
   </script>
+  </br>
   	<section class="section extra">
 		<div class="columns is-centered">
 			<div class="column is-half">
@@ -238,5 +257,9 @@
     </div>
   </div>
 </footer>
+ <script src="./../state_table_data.js"></script>
+    <script type="text/javascript">
+    var active_state = "India";
+</script>
 </body>
 </html> 
